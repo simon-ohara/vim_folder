@@ -91,6 +91,10 @@ map <C-L> :NERDTreeToggle<CR>
 
 map <TAB> ==
 
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+      \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+      \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
 " This breaks fugitive :(
 "set wildignore+=*/.git/*,*/.hg/*,*/.svn/*  " Linux/MacOSX
 " This stops in ctrl-p which is ace tho
